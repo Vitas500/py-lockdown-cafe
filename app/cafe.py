@@ -14,7 +14,7 @@ class Cafe:
         if isinstance(expiration_date, str):
             expiration_date = datetime.strptime(visitor["vaccine"]
                                                 .get("expiration_date"),
-                                                '%Y-%m-%d').date()
+                                                "%Y-%m-%d").date()
         if expiration_date < datetime.date.today():
             raise OutdatedVaccineError("Vaccine is outdated")
         if "wearing_a_mask" not in visitor or not visitor["wearing_a_mask"]:
