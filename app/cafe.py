@@ -12,7 +12,7 @@ class Cafe:
             raise NotVaccinatedError("Visitor is not vaccinated")
         expiration_date = visitor["vaccine"].get("expiration_date")
         if isinstance(expiration_date, str):
-            expiration_date = datetime.strptime(visitor["vaccine"]
+            expiration_date = datetime.datetime.strptime(visitor["vaccine"]
                                                 .get("expiration_date"),
                                                 "%Y-%m-%d").date()
         if expiration_date < datetime.date.today():
